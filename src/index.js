@@ -1,13 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "react-toastify/dist/ReactToastify.css";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import MainProvider from "./context/MainContext";
+import MainThemeProvider from "./context/MainThemeContext";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <MainProvider>
+        <MainThemeProvider>
+          <App />
+        </MainThemeProvider>
+      </MainProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
